@@ -1,6 +1,6 @@
 <template>
   <div class="todo-list">
-    <ul class="todo-list__items">
+    <TransitionGroup name="list" tag="ul" class="todo-list__items">
       <li
         class="shadow todo-list__item"
         v-for="(todoItem, index) in propsdata"
@@ -23,7 +23,7 @@
           <FontAwesomeIcon icon="trash-alt" />
         </span>
       </li>
-    </ul>
+    </TransitionGroup>
   </div>
 </template>
 
@@ -77,5 +77,15 @@ export default {
 .text-completed {
   color: #b3adad;
   text-decoration: line-through;
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.4s;
+}
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
