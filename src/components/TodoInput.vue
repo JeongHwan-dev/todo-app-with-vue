@@ -9,7 +9,6 @@
     <span class="input-box__add-btn" @click="addTodo">
       <FontAwesomeIcon icon="plus" class="input-box__add-btn-icon" />
     </span>
-    <!-- <button id="show-modal" @click="showModal = true">Show Modal</button> -->
     <Modal v-if="showModal" @close="showModal = false">
       <div slot="header">
         <span class="modal-header__title">경고!</span>
