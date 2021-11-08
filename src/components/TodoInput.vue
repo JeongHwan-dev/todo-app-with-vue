@@ -9,14 +9,27 @@
     <span class="input-box__add-btn" @click="addTodo">
       <FontAwesomeIcon icon="plus" class="input-box__add-btn-icon" />
     </span>
+    <!-- <button id="show-modal" @click="showModal = true">Show Modal</button> -->
+    <Modal v-if="showModal" @close="showModal = false">
+      <div slot="header">
+        <span class="modal-header__title">경고!</span>
+        <span class="modal-header__close-modal-btn" @click="closeModal">
+          <FontAwesomeIcon icon="times" />
+        </span>
+      </div>
+      <p slot="body">아무것도 입력하지 않으셨습니다.</p>
+    </Modal>
   </div>
 </template>
 
 <script>
+import Modal from './common/Modal.vue';
+
 export default {
   data() {
     return {
       newTodoItem: '',
+      showModal: false,
     };
   },
   methods: {
@@ -25,12 +38,18 @@ export default {
     },
     addTodo() {
       if (this.newTodoItem !== '') {
-        const todoItemObject = { completed: false, item: this.newTodoItem };
-
-        localStorage.setItem(this.newTodoItem, JSON.stringify(todoItemObject));
+        this.$emit('addTodoItem', this.newTodoItem);
         this.clearInput();
+      } else {
+        this.showModal = !this.showModal;
       }
     },
+    closeModal() {
+      this.showModal = false;
+    },
+  },
+  components: {
+    Modal,
   },
 };
 </script>
