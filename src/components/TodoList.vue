@@ -3,22 +3,22 @@
     <TransitionGroup name="list" tag="ul" class="todo-list__items">
       <li
         class="shadow todo-list__item"
-        v-for="(todoItem, index) in propsdata"
-        :key="todoItem.item"
+        v-for="(todoItem, index) in this.storedTodoItems"
+        :key="index"
       >
         <span
           class="todo-list__check-btn"
-          :class="{ 'check-btn-completed': todoItem.completed }"
-          @click="toggleComplete(todoItem, index)"
+          :class="{ 'check-btn--completed': todoItem.completed }"
+          @click="toggleComplete({ todoItem, index })"
         >
           <FontAwesomeIcon icon="check" />
         </span>
-        <span :class="{ 'text-completed': todoItem.completed }">{{
-          todoItem.item
-        }}</span>
+        <span :class="{ 'text--completed': todoItem.completed }">
+          {{ todoItem.item }}
+        </span>
         <span
           class="todo-list__remove-btn"
-          @click="removeTodo(todoItem, index)"
+          @click="removeTodo({ todoItem, index })"
         >
           <FontAwesomeIcon icon="trash-alt" />
         </span>
@@ -28,15 +28,17 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
+
 export default {
-  props: ['propsdata'],
+  computed: {
+    ...mapGetters(['storedTodoItems']),
+  },
   methods: {
-    removeTodo(todoItem, index) {
-      this.$emit('removeItem', todoItem, index);
-    },
-    toggleComplete(todoItem, index) {
-      this.$emit('toggleItem', todoItem, index);
-    },
+    ...mapMutations({
+      removeTodo: 'removeOneItem',
+      toggleComplete: 'toggleOneItem',
+    }),
   },
 };
 </script>
@@ -71,10 +73,10 @@ export default {
   cursor: pointer;
 }
 
-.check-btn-completed {
+.todo-list .todo-list__check-btn.check-btn--completed {
   color: #b3adad;
 }
-.text-completed {
+.text--completed {
   color: #b3adad;
   text-decoration: line-through;
 }
