@@ -1,13 +1,16 @@
 <template>
-  <div class="clear-all-container">
+  <div class="clear-all-container" v-if="storedTodoItems.length">
     <span class="clear-all-container__btn" @click="clearTodo">Clear All</span>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
+  computed: {
+    ...mapGetters(['storedTodoItems']),
+  },
   methods: {
     ...mapMutations({
       clearTodo: 'clearAllItems',
