@@ -57,13 +57,20 @@ export default {
 
 <style scoped>
 .input-box {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
   height: 50px;
+  margin: 0 auto;
   border-radius: 5px;
   background-color: #fff;
   line-height: 50px;
 }
 .input-box .input-box__input {
+  width: 100%;
+  padding: 0 30px;
   border-style: none;
+  border-radius: 5px;
   font-size: 0.9rem;
 }
 .input-box .input-box__input:focus {

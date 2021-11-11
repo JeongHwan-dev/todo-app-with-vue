@@ -45,15 +45,15 @@ export default {
 
 <style scoped>
 .todo-list .todo-list__items {
-  list-style-type: none;
-  margin-top: 0;
+  max-width: 500px;
+  margin: 0 auto;
   padding-left: 0;
+  list-style-type: none;
   text-align: left;
 }
 .todo-list .todo-list__item {
   display: flex;
   min-height: 50px;
-  height: 50px;
   margin: 0.5rem 0;
   padding: 0 1rem;
   background-color: #fff;

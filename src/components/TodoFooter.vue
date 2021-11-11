@@ -20,14 +20,21 @@ export default {
 .clear-all-container {
   width: 8.5rem;
   height: 50px;
-  margin: 0 auto;
+  margin: 20px auto 0;
   border-radius: 5px;
   background-color: #fff;
   line-height: 50px;
 }
 .clear-all-container__btn {
   display: block;
-  color: #e20303;
+  border-radius: 5px;
+  background-color: #f08383;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.3s;
   cursor: pointer;
+}
+.clear-all-container__btn:hover {
+  background-color: #ea4e4e;
 }
 </style>
