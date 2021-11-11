@@ -3,6 +3,9 @@
   <img src="./readme_assets/todo-list_logo.png" alt="OMDb.com" height="100px" />
   <br />
   <h1>Todo List App with Vue</h1>
+  <a href="https://app.netlify.com/sites/happy-bassi-c5d6dd/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/c4b43bd3-a317-41c2-8214-cf41dad6b27d/deploy-status" alt="Netlify Status" />
+  </a>
   <br />
 </div>
 
@@ -23,7 +26,7 @@ Vue.js로 개발한 **Todo List** 웹 애플리케이션입니다.
 
 <br />
 
-[**🔗 배포된 웹 서비스로 바로가기 Click !**](https://adoring-varahamihira-59ab90.netlify.app/#/) 👈
+[**🔗 배포된 웹 서비스로 바로가기 Click !**](https://happy-bassi-c5d6dd.netlify.app/) 👈
 
 > 새 창 열기 방법 : CTRL+click (on Windows and Linux) | CMD+click (on MacOS)
 
@@ -59,7 +62,7 @@ Vue.js로 개발한 **Todo List** 웹 애플리케이션입니다.
 
 <div id='3'></div>
 
-## 📄 주요 페이지
+## 🎥 데모 영상
 
 | 메인 페이지 |
 | :---------: |
